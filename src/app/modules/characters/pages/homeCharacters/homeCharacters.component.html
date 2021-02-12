@@ -1,0 +1,31 @@
+<div>
+
+  <h1 class="text-3xl font-bold text-white text-center">Rick And Morty - Test API</h1>
+
+  <h2 class="text-2xl font-semibold text-white mt-24 mb-8">Main Characters</h2>
+
+
+  <div class="grid gap-4 grid-cols-5 mb-6">
+    <div *ngFor="let item of principalCharacters">
+      <a 
+        class="cursor-pointer"
+        [routerLink]="['/character', item.id]" 
+      >
+        <character-profile-component [character]="item"></character-profile-component>
+      </a>
+    </div>
+  </div>
+
+  <h2 class="text-2xl font-semibold text-white mt-24 mb-8">Others characters of Rick and morty</h2>
+
+  <div class="grid gap-4 grid-cols-4">
+    <div *ngFor="let item of characters">
+      <a 
+        class="cursor-pointer"
+        [routerLink]="['/character', item.id]"
+      >
+        <character-card-component [character]="item"></character-card-component>
+      </a>
+  </div>
+  </div>
+</div>
