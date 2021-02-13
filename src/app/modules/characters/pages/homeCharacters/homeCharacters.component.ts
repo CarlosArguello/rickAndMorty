@@ -16,11 +16,12 @@ export class HomeCharacterComponent{
     private characterService: CharacterService 
   ){
     this.characterService.getCharacters().subscribe( ({ results }) => {
-      this.characters = results 
+      //REMOVER LOS CARACTERES PRINCIPALES DE "Others characters of Rick and morty"
+      this.characters = results.splice(5)
     })
 
     this.characterService.getPrincipalsCharacters().subscribe( (characters) => {
-      this.principalCharacters = characters 
+      this.principalCharacters = characters
     })
   }
 }
