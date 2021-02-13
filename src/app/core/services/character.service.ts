@@ -15,12 +15,7 @@ export class CharacterService{
     }
 
     getCharacters(){
-        const page = Math.floor((Math.random() * (10 - 2 + 1)) + 2).toString();
-
-        const params = new HttpParams().append("page", page)
-        return this._http.get<RickAndMortyDefaultInterface>("https://rickandmortyapi.com/api/character", {
-            params
-        })
+        return this._http.get<RickAndMortyDefaultInterface>("https://rickandmortyapi.com/api/character")
     }
 
     getPrincipalsCharacters(){
