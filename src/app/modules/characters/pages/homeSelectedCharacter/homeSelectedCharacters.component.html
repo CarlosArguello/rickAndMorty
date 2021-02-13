@@ -1,1 +1,9 @@
-<h1>Hi</h1>
+<character-card-profile-component [character]="character"></character-card-profile-component>
+
+<h2 class="_text-light text-3xl font-bold mb-8 mt-16">Character episodes</h2>
+
+<div class="grid gap-4 grid-cols-5">
+    <div *ngFor="let episode of episodes">
+        <episode-card-component [episode]="episode"></episode-card-component>
+    </div>
+</div>

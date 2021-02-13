@@ -1,3 +1,44 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+$primaryColor: #53abee;
+$primaryColorDark: #477385;
+
+$secondaryColor: #316759;
+$secondaryColorLight: #1b6f20;
+
+$tertiaryColor: #926F44;
+$tertiaryhColorLight: #C19978;
+
+$darkColor: #24282f;
+$mediumColor: #3c3e44;
+$lightColor: #FFFFFF;
+
+._text-dark{ color: $darkColor }
+._bg-dark{ background-color: $darkColor }
+
+._text-light-dark{ color: $mediumColor }
+._bg-light-dark{ background-color: $mediumColor }
+
+._text-light{ color: $lightColor }
+._bg-light{ background-color: $lightColor }
+
+._text-primary{ color: $primaryColor }
+._bg-primary{ background-color: $primaryColor }
+
+._text-primary-dark{ color: $primaryColorDark }
+._bg-primary-dark{ background-color: $primaryColorDark }
+
+._text-secondary{ color: $secondaryColor }
+._bg-secondary{ background-color: $secondaryColor }
+
+._text-secondary-light{ color: $secondaryColorLight }
+._bg-secondary-light{ background-color: $secondaryColorLight }
+
+._text-tertiary{ color: $tertiaryColor }
+._bg-tertiary{ background-color: $tertiaryColor }
+
+._text-tertiary-light{ color: $tertiaryhColorLight }
+._bg-tertiary-light{ background-color: $tertiaryhColorLight }

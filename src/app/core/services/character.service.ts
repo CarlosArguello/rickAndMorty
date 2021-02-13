@@ -7,7 +7,7 @@ import { CharacterInterface } from "@shared/interfaces/charactersInterface"
 @Injectable({
     providedIn: "root"
 })
-export class CharacterService{
+export class CharacterService{ 
 
     mainCharactersID: number[] = [1,2,3,4,5]
 
@@ -16,7 +16,7 @@ export class CharacterService{
     }
 
     getCharacters(){
-        
+
         const page = Math.floor((Math.random() * (10 - 2 + 1)) + 2).toString();
 
         const params = new HttpParams().append("page", page)
@@ -28,5 +28,9 @@ export class CharacterService{
     getPrincipalsCharacters(){
         
         return this._http.get<CharacterInterface[]>(`https://rickandmortyapi.com/api/character/${this.mainCharactersID.toString()}`)
+    }
+
+    getCharacterByID(id: number){
+        return this._http.get<CharacterInterface>(`https://rickandmortyapi.com/api/character/${id.toString()}`)
     }
 }

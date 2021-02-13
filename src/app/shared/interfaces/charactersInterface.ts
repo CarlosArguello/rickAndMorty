@@ -9,7 +9,8 @@ export interface CharacterInterface{
     episode: string[],
     location: LocationCharacterInterface,
     origin: LocationCharacterInterface,
-    type?: string
+    type?: string,
+    created?: string
 }
 
 export interface LocationCharacterInterface{
