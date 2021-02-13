@@ -1,8 +1,8 @@
-<div class="character bg-white flex rounded-md overflow-hidden" >
+<div class="character _bg-light-dark flex rounded-md overflow-hidden shadow-md hover:shadow-lg">
   <img class="w-28" [src]="character.image"/>
   <div class="flex-grow flex flex-col justify-center py-2 px-4">
-      <h4 class="text-xl font-bold">{{ character.name }}</h4>
-      <p class="text-base ">{{character.species}} - {{ character.gender }}</p>
-      <p class="text-sm">{{ character.origin.name }}</p>
+      <h4 class="text-xl font-bold _text-primary">{{ character.name }}</h4>
+      <p class="text-base _text-light">{{character.species}} - {{ character.gender }}</p>
+      <p class="text-sm _text-light">{{ character.origin.name }}</p>
   </div>
 </div>
