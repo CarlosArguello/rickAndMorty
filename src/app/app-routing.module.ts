@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeCharacterComponent } from '@app/modules/characters/pages/homeCharacters/homeCharacters.component';
 import { HomeSelectedCharacterComponent } from '@app/modules/characters/pages/homeSelectedCharacter/homeSelectedCharacters.component';
-
+import { SearchCharacterComponent } from '@app/modules/characters/pages/searchCharacters/searchCharacter.component';
 
 const routes: Routes = [
   {
@@ -13,7 +13,12 @@ const routes: Routes = [
   },
   {
     path: 'characters',
-    component: HomeCharacterComponent
+    component: HomeCharacterComponent,
+  },
+  {
+    path: 'characters/search',
+    component: SearchCharacterComponent
+
   },
   {
     path: 'character/:id',

@@ -21,7 +21,6 @@ export class HomeCharacterComponent{
 
     this.characterService.getPrincipalsCharacters().subscribe( (characters) => {
       this.principalCharacters = characters 
-      console.log(characters)
     })
   }
 }

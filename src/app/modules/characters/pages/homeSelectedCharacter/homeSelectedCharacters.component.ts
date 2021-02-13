@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { EpisodeInterface } from '@shared/interfaces/episodeInterface';
 import { CharacterInterface } from "@shared/interfaces/charactersInterface"
@@ -20,13 +20,19 @@ export class HomeSelectedCharacterComponent{
   episodes!: EpisodeInterface[]
   
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
-    private characterService: CharacterService,
-    private episodeService: EpisodeService
+    public characterService: CharacterService,
+    public episodeService: EpisodeService
   ){
 
     this.characterID = this.route.snapshot.params["id"]
-    characterService.getCharacterByID(Number(this.characterID)).subscribe(character => {
+    this.initGetCharacterByID(Number(this.characterID))
+
+  }
+
+  initGetCharacterByID(id: number){
+    this.characterService.getCharacterByID(id).subscribe(character => {
 
       this.character = character
       const episodesID = character.episode.map( mappedEpisode => {
@@ -34,14 +40,26 @@ export class HomeSelectedCharacterComponent{
         return splitString[splitString.length-1]
       })
 
-      episodeService.getEpisodesByID(episodesID).subscribe( episodes => {
-        console.log("episodes: ", episodes)
-        if(!Array.isArray(episodes))
-          this.episodes = [episodes]
-        else
-          this.episodes = episodes
-      })
+      this.initGetEpisodesByID(episodesID)
     })
-
   }
+
+  initGetEpisodesByID(episodesID: string[]){
+    this.episodeService.getEpisodesByID(episodesID).subscribe( episodes => {
+      if(!Array.isArray(episodes))
+        this.episodes = [episodes]
+      else
+        this.episodes = episodes
+    })
+  }
+
+  newSeachCharactersByID(characters: string[]){
+    const charactersID = characters.map( character => {
+      const splitString: string[] = character.split("/") 
+      return splitString[splitString.length-1]
+    })
+    
+    this.router.navigate(["/characters", "search"], { queryParams: { id: charactersID } })
+  }
+
 }

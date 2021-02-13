@@ -6,6 +6,8 @@ import { CharacterProfileComponent } from '@shared/components/characterProfile/c
 import { EpisodeCardComponent } from '@shared/components/episodeCard/episodeCard.component';
 import { CharacterCardProfile } from '@shared/components/characterCardProfile/characterCardProfile.component';
 
+import { NavegationComponent } from '@shared/layouts/navegation/navegation.component';
+
 
 
 @NgModule({
@@ -13,13 +15,15 @@ import { CharacterCardProfile } from '@shared/components/characterCardProfile/ch
         CharacterCardComponent,
         CharacterProfileComponent,
         EpisodeCardComponent,
-        CharacterCardProfile
+        CharacterCardProfile,
+        NavegationComponent
     ],
     exports: [
         CharacterCardComponent,
         CharacterProfileComponent,
         EpisodeCardComponent,
-        CharacterCardProfile
+        CharacterCardProfile,
+        NavegationComponent
     ],
     imports:[
         CommonModule,
